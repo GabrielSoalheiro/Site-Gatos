@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        
+        <style>
+            body
+            {
+                position: relative;
+            }
+            
+            .container
+            {
+                margin-top: 100px;
+            }
+        </style>
+            </head>
+
+    <body data-spy="scroll" data-target="#EpicNavbar">
+        <nav id="EpicNavbar" class="navbar navbar-light bg-light px-3 fixed-top">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#Gato1">@(ViewBag.t.activity)</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#Gato2">@(ViewBag.t.activity)</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#Gato3">@(ViewBag.t.activity)</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#Gato4">@(ViewBag.t.activity)</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div data-spy="scroll" data-target="#EpicNavbars" data-offset="0">
+                        <h4 id="Gato1">@(ViewBag.t.activity)</h4>
+
+                        <img src="@(ViewBag.o[0].url)" >
+
+                        <h4 id="Gato2">@(ViewBag.t.activity)</h4>
+
+                        <img src="@(ViewBag.o[0].url)" >
+
+                        <h4 id="Gato3">@(ViewBag.t.activity)</h4>
+
+
+                        <img src="@(ViewBag.o[0].url)" >
+
+                        <h4 id="Gato4">@(ViewBag.t.activity)</h4>
+
+                        <img src="@(ViewBag.o[0].url)" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Optional JavaScript -->
+        <!-- Popper.js first, then Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+        
+        <script>
+            window.addEventListener( "resize", ResizeWindow );
+
+            function ResizeWindow( )
+            {
+                var dataSpyList = [].slice.call( document.querySelectorAll( '[data-spy="scroll"]' ) );
+                
+                dataSpyList.forEach( function ( dataSpyElement )
+                {
+                    bootstrap.ScrollSpy.getInstance( dataSpyElement ).refresh( );
+                } );
+            }
+        </script>
+    </body>
+</html>
+
